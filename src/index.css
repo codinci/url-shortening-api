@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-cyan: 180deg, 66%, 49%;
+    --color-primary-dark-violet: 257deg, 27%, 26%;
+    --color-secondary-red: 0deg, 87%, 67%;
+    --color-neutral-gray: 0deg, 0%, 75%;
+    --color-neutral-grayish-violet: 257deg, 7%, 63%;
+    --color-neutral-very-dark-blue: 255deg, 11%, 22%;
+    --color-neutral-very-dark-violet: 260deg, 8%, 14%;
+  }
+}
