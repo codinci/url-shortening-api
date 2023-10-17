@@ -8,7 +8,7 @@ export default {
     fontFamily: {
       'poppins': 'Poppins, Helvetica, Arial, sans-serif',
     },
-    
+
     screens: {
       sm: '415px',
       md: '768px',
@@ -16,20 +16,23 @@ export default {
       xl: '1440px',
     },
     extend: {
-       colors: {
+      colors: {
         'primary-cyan': 'hsl(var(--color-primary-cyan))',
         'primary-dark-violet': 'hsl(var(--color-primary-dark-violet))',
-        'seondary-red': 'hsl(var(--color-secondary-red))',
+        'secondary-red': 'hsl(var(--color-secondary-red))',
         'neutral-gray': 'hsl(var(--color-neutral-gray))',
         'neutral-gray-violet': 'hsl(var(--color-neutral-grayish-violet))',
         'neutral-very-dark-blue': 'hsl(var(--color-neutral-very-dark-blue))',
         'neutral-very-dark-violet': 'hsl(var(--color-neutral-very-dark-violet))',
-        'testColor': 'ff0000'
       },
 
       fontSize: {
         base: ['18px', '24px'],
       },
+      backgroundImage: {
+        'shorten-image': "url(../../images/bg-shorten-desktop.svg)",
+        'boost-image': "url(../../images/bg-boost-desktop.svg)",
+      }
     },
   },
   plugins: [],

@@ -1,6 +1,6 @@
 import logo from '../../images/logo.svg'
 
-const Navbar = () => {
+export const Navbar = () => {
 	return (
 		<header className="flex items-center justify-between p-8 mx-20">
 			<div className="flex items-center gap-x-6">
@@ -36,4 +36,3 @@ const Navbar = () => {
 
 }
 
-export default Navbar;

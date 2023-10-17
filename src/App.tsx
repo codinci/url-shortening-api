@@ -1,5 +1,9 @@
-import Home from './components/Home'
-import Navbar from './components/Navbar'
+import { LinkForm } from './components/LinkForm'
+import { Navbar } from './components/Navbar'
+import { HeroSection } from './components/HeroSection'
+import { Info } from './components/Info'
+import { ActionSection } from './components/ActionSection'
+import { Footer } from './components/Footer'
 
 function App() {
 
@@ -7,7 +11,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <main>
+        <HeroSection/>
+        <LinkForm />
+        <Info />
+        <ActionSection/>
+      </main>
+      <Footer/>
     </>
   )
 }
