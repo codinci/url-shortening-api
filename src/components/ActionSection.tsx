@@ -1,8 +1,8 @@
 export const ActionSection = () => {
 	return (
 		<section className="w-full bg-scroll bg-primary-dark-violet
-			bg-boost-image flex justify-center items-center flex-col">
-			<h1 className='text-center text-white font-poppins text-3xl font-black mt-12 p-4'>
+			bg-mobile-boost-image flex justify-center items-center flex-col md:bg-desktop-boost-image ">
+			<h1 className='text-center text-white font-poppins text-xl font-black mt-12 p-4 md:text-3xl'>
 				Boost your links today
 			</h1>
 			<button className="bg-primary-cyan text-white font-poppins font-semibold w-fit px-6 py-2

@@ -30,6 +30,7 @@ export const Navbar = () => {
 			</div>
 
 
+			{/* MOBILE SCREEN NAVBAR */}
 			<div className="flex items-center justify-end ">
 				<div  onClick={() => setIsNavOpen((prev) => !prev) }
 					className="space-y-1 mt-8 p-6 md:hidden">
@@ -52,6 +53,8 @@ export const Navbar = () => {
 					>
 					</span>
 				</div>
+
+				{/* LARGER SCREEN NAVBAR */}
 				<div className='hidden md:flex md:gap-4'>
 					<button>
 						<a className="font-poppins font-bold text-neutral-gray">Login</a>

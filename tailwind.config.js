@@ -30,8 +30,10 @@ export default {
         base: ['18px', '24px'],
       },
       backgroundImage: {
-        'shorten-image': "url(../../images/bg-shorten-desktop.svg)",
-        'boost-image': "url(../../images/bg-boost-desktop.svg)",
+        'desktop-shorten-image': "url(../../images/bg-shorten-desktop.svg)",
+        'desktop-boost-image': "url(../../images/bg-boost-desktop.svg)",
+        'mobile-shorten-image': "url(../../images/bg-shorten-mobile.svg)",
+        'mobile-boost-image': "url(../../images/bg-boost-mobile.svg)",
       }
     },
   },
