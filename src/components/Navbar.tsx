@@ -1,8 +1,8 @@
 import logo from '../../images/logo.svg'
-import { useState } from 'react'
+import { useNavStore } from '../store'
 
 export const Navbar = () => {
-	const [isNavOpen, setIsNavOpen] = useState(false);
+	const { isOpen, toggleIsOpen } = useNavStore();
 
 	return (
 		<header className="flex items-center justify-between md:p-6 lg:p-8 lg:mx-20 md:mx-10">
@@ -32,22 +32,22 @@ export const Navbar = () => {
 
 			{/* MOBILE SCREEN NAVBAR */}
 			<div className="flex items-center justify-end ">
-				<div  onClick={() => setIsNavOpen((prev) => !prev) }
+				<div  onClick={toggleIsOpen}
 					className="space-y-1 mt-8 p-6 md:hidden">
 					<span className={`bg-neutral-gray block transition-all duration-300 ease-out
-						h-1 w-8 rounded-sm ${isNavOpen ?
+						h-1 w-8 rounded-sm ${isOpen ?
 						'rotate-45 translate-y-3' : '-translate-y-0.5'
 						}`}
 					>
 					</span>
 					<span className={`bg-neutral-gray block transition-all duration-300 ease-out
-						h-1 w-8 rounded-sm my-0.5 ${isNavOpen ?
+						h-1 w-8 rounded-sm my-0.5 ${isOpen ?
 						'opacity-0' : 'opacity-100'
 						}`}
 					>
 					</span>
 					<span className={`bg-neutral-gray block transition-all duration-300 ease-out
-						h-1 w-8 rounded-sm ${isNavOpen ?
+						h-1 w-8 rounded-sm ${isOpen ?
 						'-rotate-45 -translate-y-1' : 'translate-y-0.5'
 						}`}
 					>

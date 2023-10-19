@@ -56,7 +56,7 @@ export const Info = () => {
 				</div>
 				<div className='bg-primary-cyan w-2 bg-scroll h-[70px] md:w-[30px] md:mt-[70px] md:h-2'></div>
 				<div className='flex flex-col items-center bg-white rounded-lg
-					w-full h-fit mt-8 md:w-1/3 md:items-start md:mt-36 lg:w-1/4'>
+					w-full h-fit  md:w-1/3 md:items-start md:mt-36 lg:w-1/4'>
 					<div>
 						<div className='mt-[-2rem] rounded-full bg-primary-dark-violet p-4 w-16 flex
 							 items-center md:ml-6'>
