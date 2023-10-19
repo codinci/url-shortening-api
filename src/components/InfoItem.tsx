@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 interface InfoItemProps {
 	imageSrc: string;
 	altText: string;
@@ -6,7 +8,7 @@ interface InfoItemProps {
 	topMargin: number;
 }
 
-export const InfoItem: React.FC<InfoItemProps> = ({
+export const InfoItem: FC<InfoItemProps> = ({
 	imageSrc, altText, headingText, paragraphText, topMargin
 	}) => {
 	return (

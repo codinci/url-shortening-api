@@ -1,0 +1,10 @@
+ <input className={`w-full md:w-3/4 lg:w-4/5 rounded-lg p-4
+              ${error ? 'border-secondary-red border-2 placeholder-[#fecaca] ::placeholder' : ''
+              }`}
+              type="text"
+              value={urlLink}
+              onChange={handleLinkChange}
+              placeholder="Shorten a link here..."
+
+            />
+            <p className={`${error} ? '' : 'hidden' text-secondary-red text-md italic mt-[-1rem] ml-[-8rem]` }>{error}</p>
