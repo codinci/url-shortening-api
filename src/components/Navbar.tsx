@@ -1,5 +1,6 @@
 import logo from '../../images/logo.svg'
 import { useNavStore } from '../store'
+import { Button } from './Button';
 
 export const Navbar = () => {
 	const { isOpen, toggleIsOpen } = useNavStore();
@@ -56,13 +57,20 @@ export const Navbar = () => {
 
 				{/* LARGER SCREEN NAVBAR */}
 				<div className='hidden md:flex md:gap-4'>
-					<button>
-						<a className="font-poppins font-bold text-neutral-gray">Login</a>
-					</button>
-					<button className='rounded-2xl bg-primary-cyan px-8 py-1.5
-						transition-colors duration-400 ease-in-out hover:bg-[#2acfcf]/50'>
-						<a className="font-poppins text-white">Sign Up</a>
-					</button>
+
+					<h1 className="font-poppins font-bold text-neutral-gray
+						hover:text-primary-dark-violet hover:cursor-pointer
+						active:text-primary-dark-violet mt-2 px-4"
+					>
+						Login
+					</h1>
+					<Button
+						borderRadius='2xl'
+						horizontalPadding={8}
+						verticalPadding={1.5}
+						hoverColor='[#2acfcf]/50'
+						text='Sign Up'
+					/>
 				</div>
 			</div>
 		</header>

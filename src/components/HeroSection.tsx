@@ -1,5 +1,6 @@
 import working from '../../images/illustration-working.svg'
 import { useNavStore } from '../store'
+import { Button } from './Button';
 
 
 export const HeroSection = () => {
@@ -19,12 +20,16 @@ export const HeroSection = () => {
 				 	md:text-start md:whitespace-normal md:text-md lg:pl-16 lg:text-xl lg:max-w-xl'>
 					Build your brand’s recognition and get detailed insights on how your links are performing.
 				</p>
-				<button className='bg-primary-cyan text-white font-semibold py-2 px-6 mt-6
-					transition-colors duration-400 ease-in-out rounded-full hover:bg-[#2acfcf]/50
-					md:ml-8 lg:ml-20'
-				>
-					Get Started
-				</button>
+				<Button
+					verticalPadding={2}
+					horizontalPadding={6}
+					borderRadius='full'
+					topMargin={6}
+					leftMarginMd={8}
+					leftMarginLg={20}
+					hoverColor='[#2acfcf]/50'
+					text='Get Started'
+				/>
 			</div>
 
 			<div className={`max-w-sm mx-4 md:max-w-md lg:max-w-2xl ${isOpen ? 'hidden' : ''}
@@ -43,11 +48,7 @@ export const HeroSection = () => {
 				<hr className='w-full border-1 pb-2 border-neutral-gray-violet'></hr>
 				<h1>Login</h1>
 
-				<button className='bg-primary-cyan font-semibold py-2 w-full
-					transition-colors duration-400 ease-in-out rounded-full hover:bg-[#2acfcf]/50'
-				>
-					Sign Up
-				</button>
+				<Button verticalPadding={2} width='full' borderRadius='full' text='Sign Up'/>
 
 			</div>
 		</section>

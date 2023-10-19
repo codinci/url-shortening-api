@@ -1,3 +1,4 @@
+import { Button } from "./Button";
 
 export const LinkForm = () => {
   return (
@@ -8,10 +9,16 @@ export const LinkForm = () => {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <input className="w-full md:w-3/4 lg:w-4/5 rounded-lg p-4"
               placeholder="Shorten a link here..." />
-            <button className="w-full md:w-1/4 lg:w-1/5 rounded-lg bg-primary-cyan p-4 transition-colors
-             duration-400 ease-in-out hover:bg-[#5eead4] text-white font-poppins font-bold">
-              Shorten It!
-            </button>
+            <Button
+              borderRadius="lg"
+              width="full"
+              widthMd="1/4"
+              widthLg="1/5"
+              padding={4}
+              hoverColor="[#5eead4]"
+              text="Shorten It!"
+            />
+  
           </div>
         </form>
       </div>
