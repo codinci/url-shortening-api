@@ -2,30 +2,53 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useNavStore } from "../store";
 import { shortenUrl } from "../api/apiFetch";
 
+interface LinkObject {
+  url: string;
+  shortUrl: string;
+}
+
 
 export const LinkForm = () => {
-  const [urlLink, setUrlLink] = useState('')
+  const [urlInput, setUrlInput] = useState('')
   const { setDisplayLink, resetDisplayLink } = useNavStore()
   const [errorMessage, setErrorMessage] = useState('')
+  const [urlLinks, setUrlLinks] = useState<LinkObject[]>([])
 
   useEffect(() => {
+    const storedLinks = localStorage.getItem('shortenedUrls')
+    if (storedLinks) {
+      setUrlLinks(JSON.parse(storedLinks))
+    }
     resetDisplayLink()
     setErrorMessage('')
   },[resetDisplayLink])
 
+  const saveToLocalStorage = (links:LinkObject[]) => {
+    localStorage.setItem("linkObjects", JSON.stringify(links));
+  };
+
   const handleLinkChange = ((e: ChangeEvent<HTMLInputElement>) => {
-    setUrlLink(e.target.value)
+    setUrlInput(e.target.value)
   })
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setDisplayLink();
-    if (!urlLink) {
+    if (!urlInput) {
       setErrorMessage("Please add a link");
     } else {
       setErrorMessage("");
       try {
-        const response = await shortenUrl(urlLink);
+        const response = await shortenUrl(urlInput);
+        if (response?.link) {
+          const linkObj = {
+            url: urlInput,
+            shortUrl: response.link,
+          };
+          setUrlLinks((prevObjects: LinkObject[]) => [...prevObjects, linkObj])
+          saveToLocalStorage([...urlLinks, linkObj])
+        }
+        setUrlInput('')
         console.log(response?.link);
       } catch (error) {
         console.error("Unfortunately, this happened:", error);
@@ -47,7 +70,7 @@ export const LinkForm = () => {
                 ${errorMessage ? 'md:mt-6 border-secondary-red border-2 placeholder-[#fca5a5] ::placeholder' : ''
                 }`}
                 type="text"
-                value={urlLink}
+                value={urlInput}
                 onChange={handleLinkChange}
                 placeholder="Shorten a link here..."
 
