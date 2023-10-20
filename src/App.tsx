@@ -21,7 +21,8 @@ function App() {
         {/* Call to Action Section */}
         <ActionSection/>
       </main>
-      <Footer/>
+      <Footer />
+      
     </>
   )
 }
