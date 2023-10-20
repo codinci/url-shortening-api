@@ -12,9 +12,13 @@ function App() {
     <>
       <Navbar />
       <main>
-        <HeroSection/>
+        {/* HeroSection */}
+        <HeroSection />
+        {/* Form section */}
         <LinkForm />
+        {/* Info Section */}
         <Info />
+        {/* Call to Action Section */}
         <ActionSection/>
       </main>
       <Footer/>

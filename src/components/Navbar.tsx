@@ -1,6 +1,5 @@
 import logo from '../../images/logo.svg'
 import { useNavStore } from '../store'
-import { Button } from './Button';
 
 export const Navbar = () => {
 	const { isOpen, toggleIsOpen } = useNavStore();
@@ -31,10 +30,14 @@ export const Navbar = () => {
 			</div>
 
 
-			{/* MOBILE SCREEN NAVBAR */}
-			<div className="flex items-center justify-end ">
-				<div  onClick={toggleIsOpen}
-					className="space-y-1 mt-8 p-6 md:hidden">
+
+			<div className="flex items-center justify-end">
+
+				{/* MOBILE SCREEN NAVBAR */}
+				<div
+					onClick={toggleIsOpen}
+					className="space-y-1 mt-8 p-6 md:hidden"
+				>
 					<span className={`bg-neutral-gray block transition-all duration-300 ease-out
 						h-1 w-8 rounded-sm ${isOpen ?
 						'rotate-45 translate-y-3' : '-translate-y-0.5'
@@ -56,22 +59,23 @@ export const Navbar = () => {
 				</div>
 
 				{/* LARGER SCREEN NAVBAR */}
-				<div className='hidden md:flex md:gap-4'>
+				<div className='hidden font-poppins font-bold md:flex md:gap-4'>
 
-					<h1 className="font-poppins font-bold text-neutral-gray
-						hover:text-primary-dark-violet hover:cursor-pointer
-						active:text-primary-dark-violet mt-2 px-4"
+					<h1
+						className="text-neutral-gray mt-3 px-4 hover:text-primary-dark-violet
+						hover:cursor-pointer active:text-primary-dark-violet "
 					>
 						Login
 					</h1>
-					<Button
-						borderRadius='2xl'
-						horizontalPadding={8}
-						verticalPadding={1.5}
-						hoverColor='[#2acfcf]/50'
-						text='Sign Up'
-					/>
+					<button
+						className="bg-primary-cyan text-white rounded-2xl px-8 py-2 mt-1.5
+						transition-colors duration-400 ease-in-out hover:bg-[#67e8f9]"
+					>
+						Sign Up
+					</button>
+
 				</div>
+
 			</div>
 		</header>
 	)

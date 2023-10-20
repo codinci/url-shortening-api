@@ -29,6 +29,7 @@ export default {
       fontSize: {
         base: ['18px', '24px'],
       },
+
       backgroundImage: {
         'desktop-shorten-image': "url(../../images/bg-shorten-desktop.svg)",
         'desktop-boost-image': "url(../../images/bg-boost-desktop.svg)",

@@ -1,4 +1,3 @@
-import { Button } from "./Button";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 export const LinkForm = () => {
@@ -23,7 +22,7 @@ export const LinkForm = () => {
       <div className="flex justify-center mx-8 md:mx-24 lg:mx-32">
         <form
           onSubmit={handleSubmit}
-          className="w-full translate-y-[50%] bg-scroll gap-5 rounded-xl
+          className="w-full translate-y-[50%] bg-scroll gap-5 rounded-xl font-poppins
           bg-primary-dark-violet bg-mobile-shorten-image bg-no-repeat bg-contain md:bg-cover
           md:bg-desktop-shorten-image p-8">
           <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4 lg:mx-8">
@@ -42,17 +41,15 @@ export const LinkForm = () => {
                 {error}
               </span>
             </div>
-            <Button
-              borderRadius="lg"
-              width="full"
-              widthMd="1/4"
-              widthLg="1/5"
-              verticalPadding={4}
-              horizontalPadding={4}
-              hoverColor="[#5eead4]"
-              btnType="submit"
-              text="Shorten It!"
-            />
+
+            <button
+              className="bg-primary-cyan text-white rounded-lg w-full md:w-1/4 lg:w-1/5
+              p-4 transition-colors duration-400 ease-in-out hover:bg-[#5eead4]"
+            >
+              Shorten It!
+            </button>
+
+
           </div>
         </form>
       </div>
