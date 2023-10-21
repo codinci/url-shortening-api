@@ -62,8 +62,7 @@ export const Navbar = () => {
 				<div className='hidden font-poppins font-bold md:flex md:gap-4'>
 
 					<h1
-						className="text-neutral-gray mt-3 px-4 hover:text-primary-dark-violet
-						hover:cursor-pointer active:text-primary-dark-violet "
+						className="text-neutral-gray mt-3 px-4 hover:cursor-pointer"
 					>
 						Login
 					</h1>

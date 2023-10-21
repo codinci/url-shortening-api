@@ -30,7 +30,7 @@ export const HeroSection = () => {
 
 			</div>
 
-			<div className={`max-w-sm mx-4 md:max-w-md lg:max-w-2xl ${isOpen ? 'hidden' : ''}
+			<div className={`max-w-sm mx-4 md:max-w-sm lg:max-w-2xl ${isOpen ? 'hidden' : ''}
 				md:mr-[-4rem] md:flex`}
 			>
 				<img src={working} alt="illustration-working" />

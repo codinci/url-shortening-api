@@ -63,14 +63,16 @@ export const LinkForm = () => {
           md:bg-desktop-shorten-image p-8">
           <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-4 lg:mx-8">
             <div className="w-full flex flex-col md:w-3/4 lg:w-4/5">
-               <input className={`rounded-lg p-4
-                ${errorMessage ? 'md:mt-6 border-secondary-red border-2 placeholder-[#fca5a5] ::placeholder' : ''
-                }`}
+              <label htmlFor='url'></label>
+              <input
+                className={`rounded-lg p-4 ${errorMessage ?
+                'md:mt-6 border-secondary-red border-2 placeholder-[#fca5a5] ::placeholder' : ''}`}
+                id='url'
+                name='url'
                 type="text"
                 value={urlInput}
                 onChange={handleLinkChange}
                 placeholder="Shorten a link here..."
-
               />
               <span
                 className={`${errorMessage ? '' : 'hidden'} text-secondary-red text-md

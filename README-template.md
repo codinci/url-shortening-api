@@ -1,6 +1,6 @@
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
-This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -14,9 +14,7 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -32,84 +30,146 @@ Users should be able to:
   - The `input` field is empty
 
 ### Screenshot
+### Desktop View
+![Desktop Version](./images/screen-shot-desktop.png)
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+### Mobile View
+![Mobile Version](./images/screen-shot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Github](https://github.com/codinci/url-shortening-api)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [React](https://reactjs.org/) - JS library using vite
+- [TypeScript](https://www.typescriptlang.org/) - JS with syntax for types
+- [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) - State management library
+- [Axios](https://axios-http.com/docs/intro) - Http requests
+- [Bitly](https://app.bitly.com) -Api for shortening url links
+- [Tailwind Css](https://tailwindcss.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
+- Learnt on use of tailwind css for a mobile webflow design
+```Info.tsx
+    <div
+      className='flex flex-col items-center md:mt-12 bg-white rounded-lg w-full
+      h-fit md:w-1/3 md:items-start lg:w-1/4'
+    >
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+- Setting customizations to tailwind css utilities
+```tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    fontFamily: {
+      'poppins': 'Poppins, Helvetica, Arial, sans-serif',
+    },
+
+    screens: {
+      sm: '415px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+    extend: {
+      colors: {
+        'primary-cyan': 'hsl(var(--color-primary-cyan))',
+        'primary-dark-violet': 'hsl(var(--color-primary-dark-violet))',
+        'secondary-red': 'hsl(var(--color-secondary-red))',
+        'neutral-gray': 'hsl(var(--color-neutral-gray))',
+        'neutral-gray-violet': 'hsl(var(--color-neutral-grayish-violet))',
+        'neutral-very-dark-blue': 'hsl(var(--color-neutral-very-dark-blue))',
+        'neutral-very-dark-violet': 'hsl(var(--color-neutral-very-dark-violet))',
+      },
+
+      fontSize: {
+        base: ['18px', '24px'],
+      },
+
+      backgroundImage: {
+        'desktop-shorten-image': "url(../../images/bg-shorten-desktop.svg)",
+        'desktop-boost-image': "url(../../images/bg-boost-desktop.svg)",
+        'mobile-shorten-image': "url(../../images/bg-shorten-mobile.svg)",
+        'mobile-boost-image': "url(../../images/bg-boost-mobile.svg)",
+      }
+    },
+  },
+  plugins: [],
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+- Learnt on typescript and on defining interfaces for use
+```LinkForm.tsx
+  export interface LinkObject {
+    url: string;
+    shortUrl: string;
+    timeStamp: number;
+  }
 ```
+- Learnt on use of zustand for state management and global access of state
+```store.jsx
+  import { create } from "zustand";
+  import { LinkObject } from "./components/LinkForm";
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+  interface NavState {
+    isOpen: boolean;
+    displayLink: boolean;
+    linkObjects: LinkObject[];
+    toggleIsOpen: () => void;
+    setDisplayLink: () => void;
+    resetDisplayLink: () => void;
+    setLinkObj: (newLinks: LinkObject[]) => LinkObject[];
+  }
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+  const getStoredLinks = () => {
+    const storedLinkObjectsString = localStorage.getItem("shortenedUrls");
+    const storedLinkObjects = storedLinkObjectsString ? JSON.parse(storedLinkObjectsString) : [];
+    return storedLinkObjects;
+  }
+
+  export const useNavStore = create<NavState>((set) => {
+    return {
+      isOpen: false,
+      displayLink: false,
+      linkObjects: getStoredLinks(),
+      toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
+      setDisplayLink: () => set(() => ({ displayLink: true })),
+      resetDisplayLink: () => set(() => ({ displayLink: false })),
+      setLinkObj: (newLinks) => {
+        set((state) => {
+          const updatedLinkObjects = [...state.linkObjects, ...newLinks];
+          localStorage.setItem("shortenedUrls", JSON.stringify(updatedLinkObjects));
+
+          // Update the linkObjects in the store
+          return { linkObjects: updatedLinkObjects };
+        });
+
+
+        return newLinks;
+      },
+    };
+  });
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'd like to further develop this application and make my own backend to shorten the urls in future.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Medium](https://medium.com/@1992season/manage-states-using-zustand-and-localstorage-7d66ff12cad6) - This helped me gain insight on how to set the initial linkObjects to the array stored in localStorage on mount
+- [Dev Community](https://dev.to/noruwa/animated-hamburger-menu-with-tailwindcss-1j0b) - This article enabled me to animate my mobile navbar hamburger menu.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [codinci](https://www.frontendmentor.io/profile/codinci)
+- Github - [codinci](https://github.com/codinci)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

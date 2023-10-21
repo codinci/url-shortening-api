@@ -39,7 +39,6 @@ const axiosInstance = axios.create({
   },
 });
 
-// Define an async function to make the POST request
 export const shortenUrl = async (longLink: string) => {
   try {
     const response:AxiosResponse<ResponseType> = await axiosInstance.post(apiUrl, {

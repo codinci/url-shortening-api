@@ -11,11 +11,17 @@ interface NavState {
   setLinkObj: (newLinks: LinkObject[]) => LinkObject[];
 }
 
+const getStoredLinks = () => {
+  const storedLinkObjectsString = localStorage.getItem("shortenedUrls");
+  const storedLinkObjects = storedLinkObjectsString ? JSON.parse(storedLinkObjectsString) : [];
+  return storedLinkObjects;
+}
+
 export const useNavStore = create<NavState>((set) => {
   return {
     isOpen: false,
     displayLink: false,
-    linkObjects: [],
+    linkObjects: getStoredLinks(),
     toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
     setDisplayLink: () => set(() => ({ displayLink: true })),
     resetDisplayLink: () => set(() => ({ displayLink: false })),
@@ -34,6 +40,4 @@ export const useNavStore = create<NavState>((set) => {
   };
 });
 
-const storedLinkObjectsString = localStorage.getItem("shortenedUrls");
-const storedLinkObjects = storedLinkObjectsString ? JSON.parse(storedLinkObjectsString) : [];
-useNavStore.setState({ linkObjects: storedLinkObjects });
+
