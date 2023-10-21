@@ -54,7 +54,7 @@ export const LinkForm = () => {
   };
 
   return (
-    <section>
+    <>
       <div className="flex justify-center mx-8 md:mx-24 lg:mx-32">
         <form
           onSubmit={handleSubmit}
@@ -90,12 +90,10 @@ export const LinkForm = () => {
             >
               Shorten It!
             </button>
-
-
           </div>
         </form>
       </div>
-    </section>
+    </>
   );
 };
 

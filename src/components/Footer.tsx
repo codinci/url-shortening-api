@@ -56,25 +56,26 @@ export const Footer = () => {
 				<div className="mx-6 text-center text-sm md:mx-0">
 					<p className="p-2">
 						Challenge by
-						<span
-							className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
-							cursor-pointer'
-						>
-							<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+						<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+							<span
+								className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
+								cursor-pointer'
+							>
 								Frontend Mentor
-							</a>.
-						</span>
+							</span>
+						</a>.
 					</p>
 					<p>
 						Coded by
-						<span
-							className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
-							cursor-pointer'
-						>
-							<a href="https://github.com/codinci" target="_blank">
+						<a href="https://github.com/codinci" target="_blank">
+							<span
+								className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
+								cursor-pointer'
+							>
 								codinci
-							</a>
-						</span>
+							</span>
+
+						</a>
 					</p>
 				</div>
 				<div>
