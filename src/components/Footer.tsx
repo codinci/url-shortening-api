@@ -71,7 +71,9 @@ export const Footer = () => {
 							className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
 							cursor-pointer'
 						>
-							<a href="https://github.com/codinci">codinci</a>
+							<a href="https://github.com/codinci" target="_blank">
+								codinci
+							</a>
 						</span>
 					</p>
 				</div>

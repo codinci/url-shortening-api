@@ -40,21 +40,21 @@ export const HeroSection = () => {
 			<div className={` font-poppins bg-primary-dark-violet
 				text-white rounded-lg mx-4 p-8  text-lg ${isOpen ? '' : 'hidden'} md:hidden`}
 			>
-				<ul className='flex items-center mb-[-3rem] flex-col space-y-6'>
+				<ul className='flex items-center flex-col space-y-6 '>
 					<li>Features</li>
 					<li>Pricing</li>
 					<li className='pb-2'>Resources</li>
-					<hr className='w-full border-1 pb-2 border-neutral-gray-violet'></hr>
-					<li>Login</li>
 				</ul>
-
-				<button
-					className="bg-primary-cyan text-white rounded-full w-full py-2 mt-16
-					transition-colors duration-400 ease-in-out hover:bg-[#5eead4]"
-				>
-					Sign Up
-				</button>
-
+				<hr className='w-full border-1 my-4 border-neutral-gray-violet'></hr>
+				<div className='flex flex-col gap-4 items-center'>
+					<h2>Login</h2>
+					<button
+						className="bg-primary-cyan text-white rounded-full w-full py-2
+						transition-colors duration-400 ease-in-out hover:bg-[#5eead4]"
+					>
+						Sign Up
+					</button>
+				</div>
 			</div>
 		</section>
 	)

@@ -26,22 +26,22 @@ export const LinkItems = () => {
 							key={index}
 							className="bg-white py-4 rounded-md flex flex-col space-y-2 md:flex-row md:items-center md:justify-between"
 						>
-							<p
+							<h2
 								className="mx-4 py-2 text-ellipsis overflow-hidden whitespace-nowrap
 								md:flex "
 							>
 								{link.url}
-							</p>
+							</h2>
 
 							<hr className="w-full border-1 border-neutral-gray-violet md:hidden"></hr>
 
 							<div className="flex flex-col gap-2 md:flex-row md:items-center">
-								<p
+								<h2
 									className="mx-4 py-2 text-primary-cyan text-ellipsis overflow-hidden
 									whitespace-nowrap"
 								>
 									{link.shortUrl}
-								</p>
+								</h2>
 
 								<button
 									className={`${isClicked[index] ? 'bg-primary-dark-violet' : 'bg-primary-cyan'}
