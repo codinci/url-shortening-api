@@ -1,34 +1,24 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavStore } from "../store";
 import { shortenUrl } from "../api/apiFetch";
 
-interface LinkObject {
+export interface LinkObject {
   url: string;
   shortUrl: string;
+  timeStamp: number;
 }
 
 
 export const LinkForm = () => {
   const [urlInput, setUrlInput] = useState('')
-  const { setDisplayLink, resetDisplayLink } = useNavStore()
+  const { setDisplayLink, linkObjects, setLinkObj } = useNavStore()
   const [errorMessage, setErrorMessage] = useState('')
-  const [urlLinks, setUrlLinks] = useState<LinkObject[]>([])
 
-  useEffect(() => {
-    const storedLinks = localStorage.getItem('shortenedUrls')
-    if (storedLinks) {
-      setUrlLinks(JSON.parse(storedLinks))
-    }
-    resetDisplayLink()
-    setErrorMessage('')
-  },[resetDisplayLink])
 
-  const saveToLocalStorage = (links:LinkObject[]) => {
-    localStorage.setItem("linkObjects", JSON.stringify(links));
-  };
 
   const handleLinkChange = ((e: ChangeEvent<HTMLInputElement>) => {
     setUrlInput(e.target.value)
+    setErrorMessage("")
   })
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -41,15 +31,22 @@ export const LinkForm = () => {
       try {
         const response = await shortenUrl(urlInput);
         if (response?.link) {
-          const linkObj = {
+          const newLinkObj:LinkObject = {
             url: urlInput,
             shortUrl: response.link,
+            timeStamp: Date.now(),
           };
-          setUrlLinks((prevObjects: LinkObject[]) => [...prevObjects, linkObj])
-          saveToLocalStorage([...urlLinks, linkObj])
+
+          //ensure that there is a maximum of three objects in array
+          if (linkObjects.length >= 3) {
+            linkObjects.pop();
+          }
+
+          setLinkObj([newLinkObj]);
+
         }
         setUrlInput('')
-        console.log(response?.link);
+
       } catch (error) {
         console.error("Unfortunately, this happened:", error);
       }
