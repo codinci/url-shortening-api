@@ -10,9 +10,9 @@ export const Info = () => {
 			<LinkItems/>
 
 			<div className="flex justify-center items-center text-center flex-col mb-12">
-				<h1 className="mt-36 font-black text-2xl md:text-4xl">
+				<h2 className="mt-36 font-black text-2xl md:text-4xl">
 					Advanced Statistics
-				</h1>
+				</h2>
 				<p
 					className="w-full font-bold text-neutral-gray-violet my-2 px-4 text-md md:text-lg
 				 	md:w-1/2"
@@ -34,9 +34,9 @@ export const Info = () => {
 							<img src={recognitionIcon} alt='brand-recognition-icon' />
 						</div>
 					</div>
-					<h2 className='mx-4 mt-8 text-lg text-neutral-very-dark-violet font-extrabold'>
+					<h3 className='mx-4 mt-8 text-lg text-neutral-very-dark-violet font-extrabold'>
 						Brand Recognition
-					</h2>
+					</h3>
 					<p
 						className='text-center px-2 text-neutral-gray-violet mx-4 my-2 pb-4 md:px-0
 						md:text-start'
@@ -60,9 +60,9 @@ export const Info = () => {
 							<img src={detailsIcon} alt='details-icon' />
 						</div>
 					</div>
-					<h2 className='mx-4 mt-8 text-lg text-neutral-very-dark-violet font-extrabold'>
+					<h3 className='mx-4 mt-8 text-lg text-neutral-very-dark-violet font-extrabold'>
 						Detailed Records
-					</h2>
+					</h3>
 					<p
 						className='text-center px-2 text-neutral-gray-violet mx-4 my-2 pb-4
 						md:px-0 md:text-start'
@@ -86,9 +86,9 @@ export const Info = () => {
 							<img src={customizationIcon} alt='customization-icon' />
 						</div>
 					</div>
-					<h2 className='mx-4 mt-8 text-lg text-neutral-very-dark-violet font-extrabold'>
+					<h3 className='mx-4 mt-8 text-lg text-neutral-very-dark-violet font-extrabold'>
 						Fully Customizable
-					</h2>
+					</h3>
 					<p
 						className='text-center px-2 text-neutral-gray-violet mx-4 my-2 pb-4
 						md:px-0 md:text-start'

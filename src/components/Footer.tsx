@@ -53,9 +53,27 @@ export const Footer = () => {
 				</div>
 			</div>
 			<div className='flex flex-col justify-end items-center mt-12'>
-				<div className="mx-6 text-center md:mx-0">
-					Challenge by <a className='text-neutral-gray-violet hover:text-primary-cyan cursor-pointer' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-					Coded by <a className='text-neutral-gray-violet hover:text-primary-cyan cursor-pointer' href="https://github.com/codinci">codinci</a>
+				<div className="mx-6 text-center text-sm md:mx-0">
+					<p className="p-2">
+						Challenge by
+						<span
+							className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
+							cursor-pointer'
+						>
+							<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+								Frontend Mentor
+							</a>.
+						</span>
+					</p>
+					<p>
+						Coded by
+						<span
+							className='pl-2 text-neutral-gray-violet hover:text-primary-cyan
+							cursor-pointer'
+						>
+							<a href="https://github.com/codinci">codinci</a>
+						</span>
+					</p>
 				</div>
 				<div>
 					<span>{currentYear}</span><i>&copy;</i>

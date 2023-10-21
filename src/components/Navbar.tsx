@@ -10,23 +10,23 @@ export const Navbar = () => {
 			<div className="flex mx-4 mt-8 md:mx-0 md:mt-0 md:gap-x-8 lg:gap-x-12 lg:ml-8">
 				<img src={logo} className="App-logo" alt="logo" />
 
-				<div className="hidden md:flex md:items-center md:gap-x-2 lg:gap-x-6">
-					<h1 className="font-poppins font-bold text-neutral-gray
+				<ul className="hidden md:flex md:items-center md:gap-x-2 lg:gap-x-6">
+					<li className="font-poppins font-bold text-neutral-gray
 						hover:text-primary-dark-violet hover:cursor-pointer active:text-primary-dark-violet"
 					>
 						Features
-					</h1>
-					<h1 className="font-poppins font-bold text-neutral-gray
+					</li>
+					<li className="font-poppins font-bold text-neutral-gray
 						hover:text-primary-dark-violet hover:cursor-pointer active:text-primary-dark-violet"
 					>
 						Pricing
-					</h1>
-					<h1 className="font-poppins font-bold text-neutral-gray
+					</li>
+					<li className="font-poppins font-bold text-neutral-gray
 						hover:text-primary-dark-violet hover:cursor-pointer active:text-primary-dark-violet"
 					>
 						Resources
-					</h1>
-				</div>
+					</li>
+				</ul>
 			</div>
 
 
@@ -61,11 +61,11 @@ export const Navbar = () => {
 				{/* LARGER SCREEN NAVBAR */}
 				<div className='hidden font-poppins font-bold md:flex md:gap-4'>
 
-					<h1
+					<h2
 						className="text-neutral-gray mt-3 px-4 hover:cursor-pointer"
 					>
 						Login
-					</h1>
+					</h2>
 					<button
 						className="bg-primary-cyan text-white rounded-2xl px-8 py-2 mt-1.5
 						transition-colors duration-400 ease-in-out hover:bg-[#67e8f9]"

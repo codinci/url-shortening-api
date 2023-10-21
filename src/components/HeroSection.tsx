@@ -12,11 +12,11 @@ export const HeroSection = () => {
 				className="flex flex-col items-center md:items-start md:my-12 md:ml-8 lg:ml-6 xl:ml-2
 				lg:max-w-2xl"
 			>
-				<h1 className='text-neutral-very-dark-blue text-center font-black text-4xl my-4
+				<h2 className='text-neutral-very-dark-blue text-center font-black text-4xl my-4
 					md:text-5xl md:ml-8 md:text-start lg:ml-20 xl:ml-2 lg:text-7xl lg:leading-16 '
 				>
 					More than just shorter links
-				</h1>
+				</h2>
 				<p className='text-neutral-gray text-center font-bold max-w-md text-lg px-4 md:ml-4
 				 	md:text-start md:whitespace-normal md:text-md lg:ml-16 xl:ml-0 lg:text-xl lg:max-w-xl'>
 					Build your brand’s recognition and get detailed insights on how your links are performing.
@@ -37,16 +37,19 @@ export const HeroSection = () => {
 			</div>
 
 			{/* MOBILE SCREEN NAVBAR */}
-			<div className={`flex items-center mb-[-3rem] flex-col font-poppins bg-primary-dark-violet
-				text-white rounded-lg mx-4 p-8 space-y-6 text-lg ${isOpen ? '' : 'hidden'} md:hidden`}
+			<div className={` font-poppins bg-primary-dark-violet
+				text-white rounded-lg mx-4 p-8  text-lg ${isOpen ? '' : 'hidden'} md:hidden`}
 			>
-				<h1>Features</h1>
-				<h1>Pricing</h1>
-				<h1 className='pb-2'>Resources</h1>
-				<hr className='w-full border-1 pb-2 border-neutral-gray-violet'></hr>
-				<h1>Login</h1>
+				<ul className='flex items-center mb-[-3rem] flex-col space-y-6'>
+					<li>Features</li>
+					<li>Pricing</li>
+					<li className='pb-2'>Resources</li>
+					<hr className='w-full border-1 pb-2 border-neutral-gray-violet'></hr>
+					<li>Login</li>
+				</ul>
+
 				<button
-					className="bg-primary-cyan text-white rounded-full w-full py-2
+					className="bg-primary-cyan text-white rounded-full w-full py-2 mt-16
 					transition-colors duration-400 ease-in-out hover:bg-[#5eead4]"
 				>
 					Sign Up
