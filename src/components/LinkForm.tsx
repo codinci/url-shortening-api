@@ -85,7 +85,7 @@ export const LinkForm = () => {
 
             <button
               className="bg-primary-cyan text-lg text-white rounded-lg w-full md:w-1/4 lg:w-1/5
-              p-4 transition-colors duration-400 ease-in-out hover:bg-[#5eead4]"
+              p-4 mt-2 md:mt-0 transition-colors duration-400 ease-in-out hover:bg-[#5eead4]"
               type="submit"
             >
               Shorten It!

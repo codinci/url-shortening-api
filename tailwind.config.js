@@ -31,10 +31,10 @@ export default {
       },
 
       backgroundImage: {
-        'desktop-shorten-image': "url(../../images/bg-shorten-desktop.svg)",
-        'desktop-boost-image': "url(../../images/bg-boost-desktop.svg)",
-        'mobile-shorten-image': "url(../../images/bg-shorten-mobile.svg)",
-        'mobile-boost-image': "url(../../images/bg-boost-mobile.svg)",
+        'desktop-shorten-image': "url(/bg-shorten-desktop.svg)",
+        'desktop-boost-image': "url(/bg-boost-desktop.svg)",
+        'mobile-shorten-image': "url(/bg-shorten-mobile.svg)",
+        'mobile-boost-image': "url(/bg-boost-mobile.svg)",
       }
     },
   },
