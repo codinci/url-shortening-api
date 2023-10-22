@@ -55,7 +55,7 @@ export const LinkForm = () => {
 
   return (
     <>
-      <div className="flex justify-center mx-8 md:mx-24 lg:mx-32">
+      <div className="flex lg:px-8 justify-center mx-8 md:mx-24 lg:mx-32">
         <form
           onSubmit={handleSubmit}
           className="w-full translate-y-[50%] bg-scroll gap-5 rounded-xl font-poppins

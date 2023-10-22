@@ -34,7 +34,10 @@ Users should be able to:
 ![Desktop Version](./images/screen-shot-desktop.png)
 
 ### Mobile View
+- Mobile View
 ![Mobile Version](./images/screen-shot-mobile.png)
+- Mobile Navigation
+![Mobile Navigation](./images/screen-shot-mobile-navbar.png)
 
 ### Links
 
